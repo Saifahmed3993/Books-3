@@ -344,9 +344,12 @@
                     <button class="filter-btn" data-category="architecture">Architecture</button>
                     <button class="filter-btn" data-category="algorithms">Algorithms</button>
                     <button class="filter-btn" data-category="testing">Testing</button>
-                    <button class="filter-btn" data-category="design">Design</button>
+                    <button class="filter-btn" data-category="design">Design & UX</button>
                     <button class="filter-btn" data-category="databases">Databases</button>
                     <button class="filter-btn" data-category="devops">DevOps</button>
+                    <button class="filter-btn" data-category="methodology">Methodologies</button>
+                    <button class="filter-btn" data-category="analysis">Analysis</button>
+                    <button class="filter-btn" data-category="security">Security</button>
                 </div>
             </div>
         </div>
@@ -525,6 +528,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="books-data.js"></script>
     <script>
         // Book data management
         class BookManager {
@@ -543,242 +547,9 @@
                 this.setupDarkMode();
             }
 
-            // Book data with metadata
+            // Load books from external database
             getBookData() {
-                return [
-                    {
-                        filename: "Artificial Intelligence - A Modern Approach 2nd ed.pdf",
-                        title: "Artificial Intelligence - A Modern Approach",
-                        author: "Stuart Russell & Peter Norvig",
-                        year: "2020",
-                        edition: "2nd Edition",
-                        category: "ai",
-                        level: "advanced",
-                        description: "The most comprehensive AI textbook covering all major AI topics including search, logic, planning, learning, and more.",
-                        skills: ["AI", "Machine Learning", "Algorithms", "Search", "Logic"]
-                    },
-                    {
-                        filename: "Clean Code.pdf",
-                        title: "Clean Code",
-                        author: "Robert C. Martin",
-                        year: "2008",
-                        edition: "1st Edition",
-                        category: "programming",
-                        level: "intermediate",
-                        description: "Learn how to write clean, maintainable, and professional code with practical examples and best practices.",
-                        skills: ["Clean Code", "Best Practices", "Software Design", "Refactoring"]
-                    },
-                    {
-                        filename: "Design Patterns Elements of Reusable Object-Oriented Software.pdf",
-                        title: "Design Patterns",
-                        author: "Gang of Four",
-                        year: "1994",
-                        edition: "1st Edition",
-                        category: "design",
-                        level: "advanced",
-                        description: "The definitive guide to object-oriented design patterns and software architecture.",
-                        skills: ["Design Patterns", "OOP", "Software Architecture", "Reusability"]
-                    },
-                    {
-                        filename: "Introduction to Algorithms 3rd ed.pdf",
-                        title: "Introduction to Algorithms",
-                        author: "CLRS",
-                        year: "2009",
-                        edition: "3rd Edition",
-                        category: "algorithms",
-                        level: "advanced",
-                        description: "The comprehensive guide to algorithms and data structures used in computer science.",
-                        skills: ["Algorithms", "Data Structures", "Complexity Analysis", "Problem Solving"]
-                    },
-                    {
-                        filename: "Effective Java (3rd Edition).pdf",
-                        title: "Effective Java",
-                        author: "Joshua Bloch",
-                        year: "2017",
-                        edition: "3rd Edition",
-                        category: "programming",
-                        level: "intermediate",
-                        description: "Learn best practices for Java programming and design with real-world examples.",
-                        skills: ["Java", "Best Practices", "Programming", "Object-Oriented Design"]
-                    },
-                    {
-                        filename: "Effective Modern C++ 11 and 14.pdf",
-                        title: "Effective Modern C++",
-                        author: "Scott Meyers",
-                        year: "2014",
-                        edition: "1st Edition",
-                        category: "programming",
-                        level: "advanced",
-                        description: "Master modern C++11 and C++14 features and best practices for effective programming.",
-                        skills: ["C++", "Modern C++", "Best Practices", "Performance"]
-                    },
-                    {
-                        filename: "Go In Action.pdf",
-                        title: "Go In Action",
-                        author: "William Kennedy",
-                        year: "2015",
-                        edition: "1st Edition",
-                        category: "programming",
-                        level: "beginner",
-                        description: "Learn Go programming language with practical examples and real-world applications.",
-                        skills: ["Go", "Programming", "Web Development", "Concurrency"]
-                    },
-                    {
-                        filename: "Clean Architecture A Craftsman Guide to Software Structure and Design.pdf",
-                        title: "Clean Architecture",
-                        author: "Robert C. Martin",
-                        year: "2017",
-                        edition: "1st Edition",
-                        category: "architecture",
-                        level: "advanced",
-                        description: "Learn how to design clean, maintainable software architecture and structure.",
-                        skills: ["Architecture", "Design", "Software Engineering", "SOLID Principles"]
-                    },
-                    {
-                        filename: "Building Microservices.pdf",
-                        title: "Building Microservices",
-                        author: "Sam Newman",
-                        year: "2015",
-                        edition: "1st Edition",
-                        category: "architecture",
-                        level: "intermediate",
-                        description: "Learn how to design and build microservices architecture for scalable applications.",
-                        skills: ["Microservices", "Architecture", "Distributed Systems", "Scalability"]
-                    },
-                    {
-                        filename: "Domain Driven Design.pdf",
-                        title: "Domain Driven Design",
-                        author: "Eric Evans",
-                        year: "2003",
-                        edition: "1st Edition",
-                        category: "architecture",
-                        level: "advanced",
-                        description: "Learn how to design software that reflects the domain model and business logic.",
-                        skills: ["DDD", "Architecture", "Design", "Domain Modeling"]
-                    },
-                    {
-                        filename: "Pro Git 2nd ed.pdf",
-                        title: "Pro Git",
-                        author: "Scott Chacon & Ben Straub",
-                        year: "2014",
-                        edition: "2nd Edition",
-                        category: "devops",
-                        level: "beginner",
-                        description: "The definitive guide to Git version control system and collaborative development.",
-                        skills: ["Git", "Version Control", "Collaboration", "DevOps"]
-                    },
-                    {
-                        filename: "TDD By Example.pdf",
-                        title: "TDD By Example",
-                        author: "Kent Beck",
-                        year: "2002",
-                        edition: "1st Edition",
-                        category: "testing",
-                        level: "intermediate",
-                        description: "Learn Test-Driven Development with practical examples and methodologies.",
-                        skills: ["TDD", "Testing", "Agile", "Software Development"]
-                    },
-                    {
-                        filename: "Software Architecture Patterns.pdf",
-                        title: "Software Architecture Patterns",
-                        author: "Mark Richards",
-                        year: "2015",
-                        edition: "1st Edition",
-                        category: "architecture",
-                        level: "advanced",
-                        description: "Learn about different software architecture patterns and when to use them.",
-                        skills: ["Architecture", "Patterns", "Design", "Software Engineering"]
-                    },
-                    {
-                        filename: "SQL And Relational Theory 3rd ed.pdf",
-                        title: "SQL And Relational Theory",
-                        author: "C.J. Date",
-                        year: "2015",
-                        edition: "3rd Edition",
-                        category: "databases",
-                        level: "intermediate",
-                        description: "Learn the theoretical foundations of SQL and relational database systems.",
-                        skills: ["SQL", "Database", "Relational Theory", "Data Management"]
-                    },
-                    {
-                        filename: "NoSQL Distilled.pdf",
-                        title: "NoSQL Distilled",
-                        author: "Martin Fowler & Pramod J. Sadalage",
-                        year: "2012",
-                        edition: "1st Edition",
-                        category: "databases",
-                        level: "intermediate",
-                        description: "A brief guide to NoSQL databases and their applications in modern development.",
-                        skills: ["NoSQL", "Database", "Big Data", "Scalability"]
-                    },
-                    {
-                        filename: "Site Reliability Engineering.pdf",
-                        title: "Site Reliability Engineering",
-                        author: "Google",
-                        year: "2016",
-                        edition: "1st Edition",
-                        category: "devops",
-                        level: "advanced",
-                        description: "Learn how Google builds, deploys, monitors, and maintains their large-scale systems.",
-                        skills: ["DevOps", "SRE", "Operations", "Scalability"]
-                    },
-                    {
-                        filename: "Continuous Delivery Reliable Software Releases Through Build, Test And Deployment Automation.pdf",
-                        title: "Continuous Delivery",
-                        author: "Jez Humble & David Farley",
-                        year: "2010",
-                        edition: "1st Edition",
-                        category: "devops",
-                        level: "intermediate",
-                        description: "Learn how to build, test, and deploy software reliably through automation.",
-                        skills: ["CI/CD", "DevOps", "Automation", "Deployment"]
-                    },
-                    {
-                        filename: "Java 8 In Action.pdf",
-                        title: "Java 8 In Action",
-                        author: "Raoul-Gabriel Urma",
-                        year: "2014",
-                        edition: "1st Edition",
-                        category: "programming",
-                        level: "intermediate",
-                        description: "Learn Java 8 features including lambda expressions, streams, and functional programming.",
-                        skills: ["Java 8", "Lambda", "Streams", "Functional Programming"]
-                    },
-                    {
-                        filename: "Kotlin In Action.pdf",
-                        title: "Kotlin In Action",
-                        author: "Dmitry Jemerov & Svetlana Isakova",
-                        year: "2017",
-                        edition: "1st Edition",
-                        category: "programming",
-                        level: "beginner",
-                        description: "Learn Kotlin programming language for modern application development.",
-                        skills: ["Kotlin", "Android", "JVM", "Modern Programming"]
-                    },
-                    {
-                        filename: "Head First Design Patterns.pdf",
-                        title: "Head First Design Patterns",
-                        author: "Eric Freeman & Elisabeth Robson",
-                        year: "2004",
-                        edition: "1st Edition",
-                        category: "design",
-                        level: "beginner",
-                        description: "Learn design patterns with visual learning approach and practical examples.",
-                        skills: ["Design Patterns", "OOP", "Java", "Visual Learning"]
-                    },
-                    {
-                        filename: "Refactoring Improving The Design Of Existing Code.pdf",
-                        title: "Refactoring",
-                        author: "Martin Fowler",
-                        year: "1999",
-                        edition: "1st Edition",
-                        category: "programming",
-                        level: "intermediate",
-                        description: "Learn how to improve the design of existing code through systematic refactoring.",
-                        skills: ["Refactoring", "Code Quality", "Best Practices", "Software Design"]
-                    },
-                    // Add more books based on your PDF files...
-                ];
+                return window.BOOKS_DATABASE || [];
             }
 
             async loadBooks() {
@@ -902,7 +673,10 @@
                     testing: 'fas fa-vial',
                     design: 'fas fa-palette',
                     databases: 'fas fa-database',
-                    devops: 'fas fa-tools'
+                    devops: 'fas fa-tools',
+                    methodology: 'fas fa-project-diagram',
+                    analysis: 'fas fa-chart-line',
+                    security: 'fas fa-shield-alt'
                 };
 
                 const categoryColors = {
@@ -913,7 +687,10 @@
                     testing: 'success',
                     design: 'secondary',
                     databases: 'dark',
-                    devops: 'primary'
+                    devops: 'primary',
+                    methodology: 'info',
+                    analysis: 'warning',
+                    security: 'danger'
                 };
 
                 const container = document.getElementById('categoryStats');
