@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommended AI Books - AI Career Path</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --danger-color: #e74c3c;
+            --info-color: #17a2b8;
+            --light-bg: #f8f9fa;
+            --dark-bg: #2c3e50;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --shadow-light: 0 2px 15px rgba(0,0,0,0.1);
+            --shadow-medium: 0 5px 25px rgba(0,0,0,0.15);
+            --border-radius: 12px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--secondary-color);
+        }
+
+        .navbar {
+            background: var(--gradient-primary) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-light);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .hero-section {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 4rem 0;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .gradient-text {
+            background: linear-gradient(45deg, #f093fb, #f5576c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #6c757d;
+        }
+
+        .book-card {
+            border: none;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-light);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .book-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .book-header {
+            border-bottom: 1px solid #f1f3f4;
+            padding-bottom: 1rem;
+        }
+
+        .book-card .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .book-skills .badge {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+        }
+
+        .book-actions {
+            margin-top: auto;
+        }
+
+        .category-filter {
+            margin-bottom: 2rem;
+        }
+
+        .filter-btn {
+            margin: 0.25rem;
+            border-radius: 25px;
+            padding: 0.5rem 1.5rem;
+            border: 2px solid var(--primary-color);
+            background: transparent;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .search-box {
+            border-radius: var(--border-radius);
+            border: 2px solid #e9ecef;
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-box:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+        }
+
+        .cta-section {
+            background: var(--gradient-secondary);
+            color: white;
+            padding: 4rem 0;
+        }
+
+        .footer {
+            background: var(--dark-bg);
+            color: white;
+        }
+
+        .footer a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: white;
+        }
+
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .loading {
+            text-align: center;
+            padding: 3rem;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--primary-color);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .dark-mode {
+            background: #1a1a1a;
+            color: #e9ecef;
+        }
+
+        .dark-mode .card {
+            background: #2d3748;
+            color: #e9ecef;
+        }
+
+        .dark-mode .navbar {
+            background: #2d3748 !important;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-brain me-2"></i>
+                AI Career Path
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="roadmaps.html">Roadmaps</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ai-assistant.html">AI Assistant</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cv-builder.html">CV Builder</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown">
+                            Resources
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="resources.html">All Resources</a></li>
+                            <li><a class="dropdown-item" href="courses.html">Free Courses</a></li>
+                            <li><a class="dropdown-item active" href="books.html">Books</a></li>
+                            <li><a class="dropdown-item" href="tools.html">Tools</a></li>
+                            <li><a class="dropdown-item" href="blog.html">Blog</a></li>
+                            <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                            <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="navbar-nav">
+                    <button class="btn btn-outline-light me-2" id="darkModeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="login.html" class="btn btn-primary me-2">Login</a>
+                    <a href="register.html" class="btn btn-outline-primary">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section py-5 mt-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="hero-title">
+                            Recommended AI Books
+                            <span class="gradient-text">Essential Reading</span>
+                        </h1>
+                        <p class="hero-subtitle">
+                            Curated collection of essential books for artificial intelligence, software engineering, and computer science. 
+                            From beginners to advanced practitioners, find the perfect book for your journey.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#books" class="btn btn-primary btn-lg me-3">
+                                <i class="fas fa-book me-2"></i>
+                                Browse Books
+                            </a>
+                            <a href="roadmaps.html" class="btn btn-outline-light btn-lg">
+                                <i class="fas fa-route me-2"></i>
+                                View Roadmaps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-center">
+                        <i class="fas fa-book-open fa-8x text-light mb-4" style="opacity: 0.7;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search and Filter Section -->
+    <section class="py-4 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <div class="input-group">
+                        <span class="input-group-text bg-white border-end-0">
+                            <i class="fas fa-search text-muted"></i>
+                        </span>
+                        <input type="text" id="searchBooks" class="search-box border-start-0" placeholder="Search books by title, author, or topic...">
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12 text-center category-filter">
+                    <button class="filter-btn active" data-category="all">All Books</button>
+                    <button class="filter-btn" data-category="ai">AI & ML</button>
+                    <button class="filter-btn" data-category="programming">Programming</button>
+                    <button class="filter-btn" data-category="architecture">Architecture</button>
+                    <button class="filter-btn" data-category="algorithms">Algorithms</button>
+                    <button class="filter-btn" data-category="testing">Testing</button>
+                    <button class="filter-btn" data-category="design">Design</button>
+                    <button class="filter-btn" data-category="databases">Databases</button>
+                    <button class="filter-btn" data-category="devops">DevOps</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Categories Stats -->
+    <section class="py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Book Collection</h2>
+                <p class="section-subtitle">Comprehensive library covering all aspects of software development</p>
+            </div>
+            
+            <div class="row" id="categoryStats">
+                <!-- Category stats will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Books Collection -->
+    <section id="books" class="py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Available Books</h2>
+                <p class="section-subtitle">
+                    <span id="bookCount">Loading...</span> books available for download
+                </p>
+            </div>
+            
+            <!-- Loading indicator -->
+            <div id="loadingIndicator" class="loading">
+                <div class="spinner"></div>
+                <p>Loading books from repository...</p>
+            </div>
+            
+            <!-- Books grid -->
+            <div class="row" id="booksContainer">
+                <!-- Books will be populated by JavaScript -->
+            </div>
+            
+            <!-- No results message -->
+            <div id="noResults" class="text-center py-5" style="display: none;">
+                <i class="fas fa-search fa-3x text-muted mb-3"></i>
+                <h4>No books found</h4>
+                <p class="text-muted">Try adjusting your search criteria or filters.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Resources -->
+    <section class="py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <h2 class="section-title">Additional Resources</h2>
+                <p class="section-subtitle">More learning materials to complement your reading</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-play-circle fa-3x text-primary mb-3"></i>
+                            <h5>Video Lectures</h5>
+                            <p class="card-text">Complementary video lectures for many of these books</p>
+                            <a href="courses.html" class="btn btn-outline-primary">Watch Lectures</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-code fa-3x text-primary mb-3"></i>
+                            <h5>Code Examples</h5>
+                            <p class="card-text">Practical code implementations from the books</p>
+                            <a href="projects.html" class="btn btn-outline-primary">View Code</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-users fa-3x text-primary mb-3"></i>
+                            <h5>Study Groups</h5>
+                            <p class="card-text">Join study groups to discuss these books</p>
+                            <a href="ai-assistant.html" class="btn btn-outline-primary">Join Group</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2>Ready to Dive Deep into Technology?</h2>
+                    <p class="mb-4">Start with these essential books and build a solid foundation in computer science and AI.</p>
+                    <a href="register.html" class="btn btn-light btn-lg me-3">
+                        <i class="fas fa-user-plus me-2"></i>
+                        Create Free Account
+                    </a>
+                    <a href="ai-assistant.html" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-robot me-2"></i>
+                        Get Reading Recommendations
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5><i class="fas fa-brain me-2"></i>AI Career Path</h5>
+                    <p>A comprehensive platform to help you build a successful career in Artificial Intelligence and Technology</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="roadmaps.html">Roadmaps</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="ai-assistant.html">AI Assistant</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6>Resources</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="courses.html">Free Courses</a></li>
+                        <li><a href="books.html">Books</a></li>
+                        <li><a href="tools.html">Tools</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6>Support</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Report Issue</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6>Account</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="register.html">Sign Up</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                        <li><a href="#">Settings</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 AI Career Path. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="me-3">Privacy Policy</a>
+                    <a href="#" class="me-3">Terms of Service</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Book data management
+        class BookManager {
+            constructor() {
+                this.books = [];
+                this.filteredBooks = [];
+                this.currentFilter = 'all';
+                this.searchTerm = '';
+                this.favorites = this.loadFavorites();
+                this.init();
+            }
+
+            init() {
+                this.loadBooks();
+                this.setupEventListeners();
+                this.setupDarkMode();
+            }
+
+            // Book data with metadata
+            getBookData() {
+                return [
+                    {
+                        filename: "Artificial Intelligence - A Modern Approach 2nd ed.pdf",
+                        title: "Artificial Intelligence - A Modern Approach",
+                        author: "Stuart Russell & Peter Norvig",
+                        year: "2020",
+                        edition: "2nd Edition",
+                        category: "ai",
+                        level: "advanced",
+                        description: "The most comprehensive AI textbook covering all major AI topics including search, logic, planning, learning, and more.",
+                        skills: ["AI", "Machine Learning", "Algorithms", "Search", "Logic"]
+                    },
+                    {
+                        filename: "Clean Code.pdf",
+                        title: "Clean Code",
+                        author: "Robert C. Martin",
+                        year: "2008",
+                        edition: "1st Edition",
+                        category: "programming",
+                        level: "intermediate",
+                        description: "Learn how to write clean, maintainable, and professional code with practical examples and best practices.",
+                        skills: ["Clean Code", "Best Practices", "Software Design", "Refactoring"]
+                    },
+                    {
+                        filename: "Design Patterns Elements of Reusable Object-Oriented Software.pdf",
+                        title: "Design Patterns",
+                        author: "Gang of Four",
+                        year: "1994",
+                        edition: "1st Edition",
+                        category: "design",
+                        level: "advanced",
+                        description: "The definitive guide to object-oriented design patterns and software architecture.",
+                        skills: ["Design Patterns", "OOP", "Software Architecture", "Reusability"]
+                    },
+                    {
+                        filename: "Introduction to Algorithms 3rd ed.pdf",
+                        title: "Introduction to Algorithms",
+                        author: "CLRS",
+                        year: "2009",
+                        edition: "3rd Edition",
+                        category: "algorithms",
+                        level: "advanced",
+                        description: "The comprehensive guide to algorithms and data structures used in computer science.",
+                        skills: ["Algorithms", "Data Structures", "Complexity Analysis", "Problem Solving"]
+                    },
+                    {
+                        filename: "Effective Java (3rd Edition).pdf",
+                        title: "Effective Java",
+                        author: "Joshua Bloch",
+                        year: "2017",
+                        edition: "3rd Edition",
+                        category: "programming",
+                        level: "intermediate",
+                        description: "Learn best practices for Java programming and design with real-world examples.",
+                        skills: ["Java", "Best Practices", "Programming", "Object-Oriented Design"]
+                    },
+                    {
+                        filename: "Effective Modern C++ 11 and 14.pdf",
+                        title: "Effective Modern C++",
+                        author: "Scott Meyers",
+                        year: "2014",
+                        edition: "1st Edition",
+                        category: "programming",
+                        level: "advanced",
+                        description: "Master modern C++11 and C++14 features and best practices for effective programming.",
+                        skills: ["C++", "Modern C++", "Best Practices", "Performance"]
+                    },
+                    {
+                        filename: "Go In Action.pdf",
+                        title: "Go In Action",
+                        author: "William Kennedy",
+                        year: "2015",
+                        edition: "1st Edition",
+                        category: "programming",
+                        level: "beginner",
+                        description: "Learn Go programming language with practical examples and real-world applications.",
+                        skills: ["Go", "Programming", "Web Development", "Concurrency"]
+                    },
+                    {
+                        filename: "Clean Architecture A Craftsman Guide to Software Structure and Design.pdf",
+                        title: "Clean Architecture",
+                        author: "Robert C. Martin",
+                        year: "2017",
+                        edition: "1st Edition",
+                        category: "architecture",
+                        level: "advanced",
+                        description: "Learn how to design clean, maintainable software architecture and structure.",
+                        skills: ["Architecture", "Design", "Software Engineering", "SOLID Principles"]
+                    },
+                    {
+                        filename: "Building Microservices.pdf",
+                        title: "Building Microservices",
+                        author: "Sam Newman",
+                        year: "2015",
+                        edition: "1st Edition",
+                        category: "architecture",
+                        level: "intermediate",
+                        description: "Learn how to design and build microservices architecture for scalable applications.",
+                        skills: ["Microservices", "Architecture", "Distributed Systems", "Scalability"]
+                    },
+                    {
+                        filename: "Domain Driven Design.pdf",
+                        title: "Domain Driven Design",
+                        author: "Eric Evans",
+                        year: "2003",
+                        edition: "1st Edition",
+                        category: "architecture",
+                        level: "advanced",
+                        description: "Learn how to design software that reflects the domain model and business logic.",
+                        skills: ["DDD", "Architecture", "Design", "Domain Modeling"]
+                    },
+                    {
+                        filename: "Pro Git 2nd ed.pdf",
+                        title: "Pro Git",
+                        author: "Scott Chacon & Ben Straub",
+                        year: "2014",
+                        edition: "2nd Edition",
+                        category: "devops",
+                        level: "beginner",
+                        description: "The definitive guide to Git version control system and collaborative development.",
+                        skills: ["Git", "Version Control", "Collaboration", "DevOps"]
+                    },
+                    {
+                        filename: "TDD By Example.pdf",
+                        title: "TDD By Example",
+                        author: "Kent Beck",
+                        year: "2002",
+                        edition: "1st Edition",
+                        category: "testing",
+                        level: "intermediate",
+                        description: "Learn Test-Driven Development with practical examples and methodologies.",
+                        skills: ["TDD", "Testing", "Agile", "Software Development"]
+                    },
+                    {
+                        filename: "Software Architecture Patterns.pdf",
+                        title: "Software Architecture Patterns",
+                        author: "Mark Richards",
+                        year: "2015",
+                        edition: "1st Edition",
+                        category: "architecture",
+                        level: "advanced",
+                        description: "Learn about different software architecture patterns and when to use them.",
+                        skills: ["Architecture", "Patterns", "Design", "Software Engineering"]
+                    },
+                    {
+                        filename: "SQL And Relational Theory 3rd ed.pdf",
+                        title: "SQL And Relational Theory",
+                        author: "C.J. Date",
+                        year: "2015",
+                        edition: "3rd Edition",
+                        category: "databases",
+                        level: "intermediate",
+                        description: "Learn the theoretical foundations of SQL and relational database systems.",
+                        skills: ["SQL", "Database", "Relational Theory", "Data Management"]
+                    },
+                    {
+                        filename: "NoSQL Distilled.pdf",
+                        title: "NoSQL Distilled",
+                        author: "Martin Fowler & Pramod J. Sadalage",
+                        year: "2012",
+                        edition: "1st Edition",
+                        category: "databases",
+                        level: "intermediate",
+                        description: "A brief guide to NoSQL databases and their applications in modern development.",
+                        skills: ["NoSQL", "Database", "Big Data", "Scalability"]
+                    },
+                    {
+                        filename: "Site Reliability Engineering.pdf",
+                        title: "Site Reliability Engineering",
+                        author: "Google",
+                        year: "2016",
+                        edition: "1st Edition",
+                        category: "devops",
+                        level: "advanced",
+                        description: "Learn how Google builds, deploys, monitors, and maintains their large-scale systems.",
+                        skills: ["DevOps", "SRE", "Operations", "Scalability"]
+                    },
+                    {
+                        filename: "Continuous Delivery Reliable Software Releases Through Build, Test And Deployment Automation.pdf",
+                        title: "Continuous Delivery",
+                        author: "Jez Humble & David Farley",
+                        year: "2010",
+                        edition: "1st Edition",
+                        category: "devops",
+                        level: "intermediate",
+                        description: "Learn how to build, test, and deploy software reliably through automation.",
+                        skills: ["CI/CD", "DevOps", "Automation", "Deployment"]
+                    },
+                    {
+                        filename: "Java 8 In Action.pdf",
+                        title: "Java 8 In Action",
+                        author: "Raoul-Gabriel Urma",
+                        year: "2014",
+                        edition: "1st Edition",
+                        category: "programming",
+                        level: "intermediate",
+                        description: "Learn Java 8 features including lambda expressions, streams, and functional programming.",
+                        skills: ["Java 8", "Lambda", "Streams", "Functional Programming"]
+                    },
+                    {
+                        filename: "Kotlin In Action.pdf",
+                        title: "Kotlin In Action",
+                        author: "Dmitry Jemerov & Svetlana Isakova",
+                        year: "2017",
+                        edition: "1st Edition",
+                        category: "programming",
+                        level: "beginner",
+                        description: "Learn Kotlin programming language for modern application development.",
+                        skills: ["Kotlin", "Android", "JVM", "Modern Programming"]
+                    },
+                    {
+                        filename: "Head First Design Patterns.pdf",
+                        title: "Head First Design Patterns",
+                        author: "Eric Freeman & Elisabeth Robson",
+                        year: "2004",
+                        edition: "1st Edition",
+                        category: "design",
+                        level: "beginner",
+                        description: "Learn design patterns with visual learning approach and practical examples.",
+                        skills: ["Design Patterns", "OOP", "Java", "Visual Learning"]
+                    },
+                    {
+                        filename: "Refactoring Improving The Design Of Existing Code.pdf",
+                        title: "Refactoring",
+                        author: "Martin Fowler",
+                        year: "1999",
+                        edition: "1st Edition",
+                        category: "programming",
+                        level: "intermediate",
+                        description: "Learn how to improve the design of existing code through systematic refactoring.",
+                        skills: ["Refactoring", "Code Quality", "Best Practices", "Software Design"]
+                    },
+                    // Add more books based on your PDF files...
+                ];
+            }
+
+            async loadBooks() {
+                try {
+                    // In a real implementation, you might fetch this from an API
+                    // For now, we'll use the predefined book data
+                    this.books = this.getBookData();
+                    this.filteredBooks = [...this.books];
+                    
+                    // Simulate loading delay
+                    await new Promise(resolve => setTimeout(resolve, 1000));
+                    
+                    this.renderBooks();
+                    this.updateBookCount();
+                    this.renderCategoryStats();
+                    this.hideLoading();
+                } catch (error) {
+                    console.error('Error loading books:', error);
+                    this.showError();
+                }
+            }
+
+            hideLoading() {
+                document.getElementById('loadingIndicator').style.display = 'none';
+            }
+
+            showError() {
+                document.getElementById('loadingIndicator').innerHTML = `
+                    <div class="text-center">
+                        <i class="fas fa-exclamation-triangle fa-3x text-warning mb-3"></i>
+                        <h4>Error Loading Books</h4>
+                        <p class="text-muted">Please try refreshing the page.</p>
+                    </div>
+                `;
+            }
+
+            renderBooks() {
+                const container = document.getElementById('booksContainer');
+                const noResults = document.getElementById('noResults');
+                
+                if (this.filteredBooks.length === 0) {
+                    container.style.display = 'none';
+                    noResults.style.display = 'block';
+                    return;
+                }
+                
+                container.style.display = 'block';
+                noResults.style.display = 'none';
+                
+                container.innerHTML = this.filteredBooks.map(book => this.createBookCard(book)).join('');
+            }
+
+            createBookCard(book) {
+                const levelColors = {
+                    beginner: 'success',
+                    intermediate: 'info',
+                    advanced: 'warning',
+                    research: 'danger'
+                };
+
+                const isFavorite = this.favorites.includes(book.filename);
+                const heartIcon = isFavorite ? 'fas fa-heart text-danger' : 'far fa-heart';
+                const favoriteText = isFavorite ? 'Saved' : 'Save';
+                const favoriteClass = isFavorite ? 'btn-outline-danger' : 'btn-outline-primary';
+
+                return `
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100 book-card" data-category="${book.category}" data-level="${book.level}">
+                            <div class="card-body">
+                                <div class="book-header mb-3">
+                                    <h5 class="card-title">
+                                        <i class="fas fa-star text-warning me-2"></i>
+                                        ${book.title}
+                                    </h5>
+                                    <span class="badge bg-${levelColors[book.level]} text-capitalize">${book.level}</span>
+                                </div>
+                                <p class="card-text">${book.description}</p>
+                                <div class="book-details">
+                                    <div class="row text-muted small mb-3">
+                                        <div class="col-6">
+                                            <i class="fas fa-user me-1"></i> ${book.author}
+                                        </div>
+                                        <div class="col-6">
+                                            <i class="fas fa-calendar me-1"></i> ${book.year}
+                                        </div>
+                                    </div>
+                                    <div class="book-skills mb-3">
+                                        ${book.skills.map(skill => 
+                                            `<span class="badge bg-light text-dark me-1">${skill}</span>`
+                                        ).join('')}
+                                    </div>
+                                </div>
+                                <div class="book-actions">
+                                    <a href="${book.filename}" target="_blank" class="btn btn-primary btn-sm">
+                                        <i class="fas fa-download me-1"></i>Download PDF
+                                    </a>
+                                    <button class="btn ${favoriteClass} btn-sm ms-2" onclick="bookManager.toggleFavorite('${book.filename}', this)">
+                                        <i class="${heartIcon} me-1"></i>${favoriteText}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            renderCategoryStats() {
+                const categoryStats = {};
+                const levelStats = {};
+                
+                this.books.forEach(book => {
+                    categoryStats[book.category] = (categoryStats[book.category] || 0) + 1;
+                    levelStats[book.level] = (levelStats[book.level] || 0) + 1;
+                });
+
+                const categoryIcons = {
+                    ai: 'fas fa-brain',
+                    programming: 'fas fa-code',
+                    architecture: 'fas fa-building',
+                    algorithms: 'fas fa-sitemap',
+                    testing: 'fas fa-vial',
+                    design: 'fas fa-palette',
+                    databases: 'fas fa-database',
+                    devops: 'fas fa-tools'
+                };
+
+                const categoryColors = {
+                    ai: 'danger',
+                    programming: 'primary',
+                    architecture: 'warning',
+                    algorithms: 'info',
+                    testing: 'success',
+                    design: 'secondary',
+                    databases: 'dark',
+                    devops: 'primary'
+                };
+
+                const container = document.getElementById('categoryStats');
+                container.innerHTML = Object.entries(categoryStats).map(([category, count]) => `
+                    <div class="col-md-3 mb-4">
+                        <div class="card h-100 text-center">
+                            <div class="card-body">
+                                <i class="${categoryIcons[category] || 'fas fa-book'} fa-3x text-${categoryColors[category]} mb-3"></i>
+                                <h5 class="text-capitalize">${category.replace(/([A-Z])/g, ' $1').trim()}</h5>
+                                <p class="text-muted">Essential books for ${category}</p>
+                                <span class="badge bg-${categoryColors[category]}">${count} Books</span>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            updateBookCount() {
+                document.getElementById('bookCount').textContent = `${this.filteredBooks.length}`;
+            }
+
+            filterBooks() {
+                this.filteredBooks = this.books.filter(book => {
+                    const matchesCategory = this.currentFilter === 'all' || book.category === this.currentFilter;
+                    const matchesSearch = this.searchTerm === '' || 
+                        book.title.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+                        book.author.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+                        book.skills.some(skill => skill.toLowerCase().includes(this.searchTerm.toLowerCase()));
+                    
+                    return matchesCategory && matchesSearch;
+                });
+                
+                this.renderBooks();
+                this.updateBookCount();
+            }
+
+            setupEventListeners() {
+                // Category filter buttons
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                        e.target.classList.add('active');
+                        this.currentFilter = e.target.dataset.category;
+                        this.filterBooks();
+                    });
+                });
+
+                // Search functionality
+                const searchInput = document.getElementById('searchBooks');
+                searchInput.addEventListener('input', (e) => {
+                    this.searchTerm = e.target.value;
+                    this.filterBooks();
+                });
+
+                // Smooth scrolling for anchor links
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const target = document.querySelector(this.getAttribute('href'));
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                });
+            }
+
+            toggleFavorite(filename, button) {
+                const index = this.favorites.indexOf(filename);
+                const heartIcon = button.querySelector('i');
+                
+                if (index === -1) {
+                    this.favorites.push(filename);
+                    heartIcon.className = 'fas fa-heart text-danger me-1';
+                    button.innerHTML = '<i class="fas fa-heart text-danger me-1"></i>Saved';
+                    button.classList.remove('btn-outline-primary');
+                    button.classList.add('btn-outline-danger');
+                    this.showNotification('Book added to favorites!', 'success');
+                } else {
+                    this.favorites.splice(index, 1);
+                    heartIcon.className = 'far fa-heart me-1';
+                    button.innerHTML = '<i class="far fa-heart me-1"></i>Save';
+                    button.classList.remove('btn-outline-danger');
+                    button.classList.add('btn-outline-primary');
+                    this.showNotification('Book removed from favorites!', 'info');
+                }
+                
+                this.saveFavorites();
+            }
+
+            loadFavorites() {
+                return JSON.parse(localStorage.getItem('favoriteBooks') || '[]');
+            }
+
+            saveFavorites() {
+                localStorage.setItem('favoriteBooks', JSON.stringify(this.favorites));
+            }
+
+            showNotification(message, type) {
+                // Create notification element
+                const notification = document.createElement('div');
+                notification.className = `alert alert-${type} alert-dismissible fade show position-fixed`;
+                notification.style.cssText = 'top: 100px; right: 20px; z-index: 9999; min-width: 300px;';
+                notification.innerHTML = `
+                    ${message}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                `;
+                
+                document.body.appendChild(notification);
+                
+                // Auto remove after 3 seconds
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.remove();
+                    }
+                }, 3000);
+            }
+
+            setupDarkMode() {
+                const darkModeToggle = document.getElementById('darkModeToggle');
+                const isDarkMode = localStorage.getItem('darkMode') === 'true';
+                
+                if (isDarkMode) {
+                    document.body.classList.add('dark-mode');
+                    darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                }
+                
+                darkModeToggle.addEventListener('click', () => {
+                    document.body.classList.toggle('dark-mode');
+                    const isDark = document.body.classList.contains('dark-mode');
+                    localStorage.setItem('darkMode', isDark);
+                    darkModeToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+                });
+            }
+        }
+
+        // Initialize the book manager when the page loads
+        let bookManager;
+        document.addEventListener('DOMContentLoaded', () => {
+            bookManager = new BookManager();
+        });
+    </script>
+</body>
+</html>
